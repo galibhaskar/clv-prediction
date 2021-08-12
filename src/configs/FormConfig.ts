@@ -10,22 +10,40 @@ export const FormConfig: IFormConfig = {
       displayName: "Customer Info",
       fields: [
         {
+          key: FieldValue.Gender,
+          displayName: "Gender",
+          type: FieldType.Choice,
+          options: ["Male", "Female", "Others"],
+        },
+        {
+          key: FieldValue.Marital_Status,
+          displayName: "Martial Status",
+          type: FieldType.Choice,
+          options: ["Single", "Married"],
+        },
+        {
+          key: FieldValue.Education,
+          displayName: "Education Qualification",
+          type: FieldType.Dropdown,
+          options: ["College", "Doctor", "High School or Below", "Master"],
+        },
+        {
+          key: FieldValue.EmploymentStatus,
+          displayName: "Employment Status",
+          type: FieldType.Dropdown,
+          options: ["Employed", "Medical Leave", "Retired", "Unemployed"],
+        },
+        {
           key: FieldValue.State,
-          displayName: "State",
+          displayName: "Customer Location",
           type: FieldType.Dropdown,
           options: ["California", "Nevada", "Oregon", "Washington"],
         },
         {
-          key: FieldValue.Gender,
-          displayName: "Gender",
+          key: FieldValue.Location_Code,
+          displayName: "Location Code",
           type: FieldType.Choice,
-          options: ["M", "F"],
-        },
-        {
-          key: FieldValue.Education,
-          displayName: "Education",
-          type: FieldType.Dropdown,
-          options: ["College", "Doctor", "High School or Below", "Master"],
+          options: ["Urban", "Suburban"],
         },
         {
           key: FieldValue.Vehicle_Size,
@@ -44,24 +62,6 @@ export const FormConfig: IFormConfig = {
             "Sports Car",
             "Two-Door Car",
           ],
-        },
-        {
-          key: FieldValue.Location_Code,
-          displayName: "Location Code",
-          type: FieldType.Choice,
-          options: ["Suburban", "Urban"],
-        },
-        {
-          key: FieldValue.Marital_Status,
-          displayName: "Martial Status",
-          type: FieldType.Choice,
-          options: ["Married", "Single"],
-        },
-        {
-          key: FieldValue.EmploymentStatus,
-          displayName: "Employment Status",
-          type: FieldType.Dropdown,
-          options: ["Employed", "Medical Leave", "Retired", "Unemployed"],
         },
       ],
     },
@@ -115,8 +115,8 @@ export const FormConfig: IFormConfig = {
         {
           key: FieldValue.Coverage,
           displayName: "Coverage",
-          type: FieldType.Choice,
-          options: ["Extended", "Premium"],
+          type: FieldType.Dropdown,
+          options: ["Basic", "Extended", "Premium"],
         },
         {
           key: FieldValue.Sales_Channel,

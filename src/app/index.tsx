@@ -75,7 +75,7 @@ class App extends React.Component<IAppProps, IAppState> {
                     }
                     selectedKey={_formValues[`${field.key}`] ? _formValues[`${field.key}`] : null}
                     onChange={(event: any, option: any) => this.handleChange(field.key, option.key)}
-                    label="Pick one"
+                    label={field.displayName}
                     required
                 />
             case FieldType.Dropdown:
