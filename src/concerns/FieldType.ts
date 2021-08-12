@@ -1,6 +1,8 @@
 export enum FieldType {
-  Integer = 1,
-  Choice,
-  Dropdown,
-  MultiSelect_Dropdown,
+  Integer = "Number",
+  Float = "Float",
+  Choice = "Choice",
+  CustomChoice = "Custom_Choice",
+  Dropdown = "Dropdown",
+  MultiSelect_Dropdown = "Multi_select_dropdown",
 }
