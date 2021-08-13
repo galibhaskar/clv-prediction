@@ -1,0 +1,30 @@
+.navContainer {
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  a {
+    text-decoration: unset !important;
+  }
+  .navItem {
+    margin: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  .titleButton {
+    position: absolute;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    width: fit-content;
+    outline: transparent;
+    &:hover {
+      background-color: white;
+      color: #6730e3;
+    }
+  }
+}

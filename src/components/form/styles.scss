@@ -1,4 +1,10 @@
 .tabPivotItem {
+  .tabPanel {
+    padding: 10px;
+    .leftPanel {
+      max-width: 50%;
+    }
+  }
   .nextButton {
     transform: rotate(180deg);
     font-size: 20px;

@@ -1,0 +1,42 @@
+.analysisContainer {
+  padding-top: 100px;
+  .analysisWrapper {
+    max-width: 60%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    .detailsWrapper {
+      max-width: 70%;
+      .title {
+        font-weight: 900;
+        color: #9629e6;
+      }
+      .description {
+        color: #707070;
+      }
+      .analysisButton {
+        margin: 10px 0;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid #6730e3;
+        color: #6730e3;
+        font-size: 15px;
+        font-weight: 700;
+        max-width: fit-content;
+        outline: transparent;
+        background-color: white;
+        cursor: pointer;
+        a {
+          text-decoration: unset;
+        }
+        &:hover {
+          color: white;
+          background: #6730e3;
+        }
+      }
+    }
+  }
+}

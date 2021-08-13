@@ -198,7 +198,7 @@ export const FormConfig: IFormConfig = {
         {
           key: FieldValue.Policy,
           displayName: "Policy",
-          type: FieldType.Choice,
+          type: FieldType.Dropdown,
           options: [
             // {
             //   key: "CorporateL1",
