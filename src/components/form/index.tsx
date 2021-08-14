@@ -22,6 +22,7 @@ import { initializeIcons } from '@fluentui/font-icons-mdl2';
 import './styles.scss';
 import { IPredicationService } from '../../contracts/PredictionService';
 import { PredictionService } from '../../providers/PredictionService';
+import Result from '../result';
 initializeIcons();
 
 export interface IFormProps { }
@@ -46,7 +47,9 @@ class Form extends React.Component<IFormProps, IFormState> {
             isError: false,
             errorMessage: "",
             isLoading: false,
-            response: ""
+            response: {
+                clv: 2000
+            }
         }
         this._predictionService = new PredictionService();
         window.scrollTo(0, 0);
@@ -64,7 +67,7 @@ class Form extends React.Component<IFormProps, IFormState> {
 
     private isFormValid = () => {
         let _formValues = _.cloneDeep(this.state.formValues);
-        // return true;
+        return true;
         return Object.values(FieldValue).map(_value => {
             if (!_formValues[_value])
                 return false;
@@ -75,7 +78,7 @@ class Form extends React.Component<IFormProps, IFormState> {
     private validateTabDetails = (tabConfig: ITabConfig): boolean => {
         let _fields: IField[] = tabConfig.fields;
         let _formValues = _.cloneDeep(this.state.formValues);
-        // return true;
+        return true;
         return _fields.map(_field => {
             if (!_formValues[_field.key])
                 return false;
@@ -95,23 +98,26 @@ class Form extends React.Component<IFormProps, IFormState> {
         }).every(_item => _item);
     }
 
-    private renderFormField = (field: IField) => {
+    private renderFormField = (field: IField, key: number) => {
         let _formValues = _.cloneDeep(this.state.formValues);
 
         switch (field.type) {
             case FieldType.Integer:
             case FieldType.Float:
                 return <TextField
+                    key={key}
                     type={field.type ? field.type : 'string'}
                     styles={{ root: { marginBottom: 10, maxWidth: 300 } }}
                     label={field.displayName}
                     defaultValue={"0"}
                     required
+                    placeholder={field.placeholder}
                     value={_formValues[`${field.key}`] ? _formValues[`${field.key}`] : null}
                     onChange={(event: any) => this.handleChange(field.key, event.target.value)}
                 />
             case FieldType.Choice:
                 return <ChoiceGroup
+                    key={key}
                     styles={{
                         root: {
                             marginBottom: 10,
@@ -133,6 +139,7 @@ class Form extends React.Component<IFormProps, IFormState> {
                 />
             case FieldType.CustomChoice:
                 return <ChoiceGroup
+                    key={key}
                     styles={{ root: { marginBottom: 10, maxWidth: 400 } }}
                     options={field.options ? field.options : []}
                     selectedKey={_formValues[`${field.key}`] ? _formValues[`${field.key}`] : null}
@@ -142,6 +149,7 @@ class Form extends React.Component<IFormProps, IFormState> {
                 />
             case FieldType.Dropdown:
                 return <Dropdown
+                    key={key}
                     placeholder={field.placeholder ? field.placeholder : "Select an option"}
                     label={`${field.displayName}`}
                     options={
@@ -159,6 +167,7 @@ class Form extends React.Component<IFormProps, IFormState> {
                 />
             case FieldType.MultiSelect_Dropdown:
                 return <Dropdown
+                    key={key}
                     placeholder={field.placeholder ? field.placeholder : "Select an option"}
                     label={`${field.displayName}`}
                     multiSelect
@@ -182,8 +191,7 @@ class Form extends React.Component<IFormProps, IFormState> {
                             [..._formValues[`${field.key}`], option.key] : option.key)
                     }
                 />
-            default:
-                return <Label>{field.displayName}</Label >
+            default: return <Label key={key} >{field.displayName}</Label >
         }
     }
 
@@ -257,7 +265,10 @@ class Form extends React.Component<IFormProps, IFormState> {
             }}
         >
             {
-                response ? <div>{response.statusCode}-{response.result}</div> : <Pivot
+                response ? <Result
+                    clv={response.clv}
+                    suggestions={[]}
+                /> : <Pivot
                     defaultSelectedKey={selectedTabIndex.toString()}
                     selectedKey={selectedTabIndex.toString()}
                     onClick={(event: any) => this.handleTabClick(event.target.innerText)}
@@ -303,7 +314,7 @@ class Form extends React.Component<IFormProps, IFormState> {
                                     }
                                     <div className={"leftPanel"}>
                                         {
-                                            _tab.fields.map((_field: IField) => this.renderFormField(_field))
+                                            _tab.fields.map((_field: IField, index: number) => this.renderFormField(_field, index))
                                         }
                                     </div>
                                     {

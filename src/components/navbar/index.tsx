@@ -16,9 +16,8 @@ class Navbar extends React.Component<INavBarProps, INavBarState> {
     public render() {
         return <div className={"navContainer"}>
             {
-                NavConfig.map(_navItem => <Link to="/">
+                NavConfig.map(_navItem => <Link to="/" key={_navItem.key}>
                     <div className={"navItem"}
-                        key={_navItem.key}
                         onClick={() => {
                             document.getElementById(_navItem.path)?.scrollIntoView({ behavior: "smooth" })
                         }}
@@ -29,7 +28,7 @@ class Navbar extends React.Component<INavBarProps, INavBarState> {
                 )
             }
             {
-                window.scrollY > 500 && <Link to="/predict">
+                (window.scrollY > 500 || window.location.pathname !== "/") && <Link to="/predict">
                     <div className={"titleButton"}>
                         {`Predict CLV`}
                     </div>

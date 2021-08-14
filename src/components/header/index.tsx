@@ -2,7 +2,9 @@ import * as React from 'react';
 import Navbar from '../navbar';
 import './styles.scss';
 
-export interface IHeaderProps { }
+export interface IHeaderProps {
+    pathName: string;
+}
 
 export interface IHeaderState {
     isNavBarFixed: boolean;
@@ -25,8 +27,15 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
         });
     }
 
+    public componentDidUpdate(prevProps: IHeaderProps) {
+        if (this.props.pathName !== prevProps.pathName) {
+            console.log(this.props.pathName);
+            this.render();
+        }
+    }
+
     public render() {
-        return <div className={this.state.isNavBarFixed || window.location.pathname !== "/" ? "headerContainerSticky" : "headerContainer"}>
+        return <div className={(this.state.isNavBarFixed || window.location.pathname !== "/") ? "headerContainerSticky" : "headerContainer"}>
             <div className={"headerWrapper"}>
                 <div className={"title"}>
                     {`CLV Prediction`}

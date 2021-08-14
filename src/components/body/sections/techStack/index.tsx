@@ -32,7 +32,7 @@ class TechStack extends React.Component<ITechStackProps, ITechStackState> {
                 <div className={"itemsContainer"}>
                     {
                         TechStackConfig.map(_tech => {
-                            return <div className={"itemWrapper"}>
+                            return <div className={"itemWrapper"} key={_tech.title}>
                                 <Icon className={"itemIcon"} iconName="ScaleVolume" />
                                 <div className={"itemDescriptionWrapper"}>
                                     <h4>

@@ -34,8 +34,16 @@ class Body extends React.Component<IBodyProps, IBodyState> {
             <Route exact path="/predict">
                 <Form />
             </Route>
+            <Route path="/report">
+                <iframe
+                    className={"reportContainer"}
+                    src="https://app.powerbi.com/reportEmbed?reportId=1881f7b6-3203-427a-8d79-6f17928225aa&autoAuth=true&ctid=865cc515-a530-4538-8ef8-072b7b2be759&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWluZGlhLXdlc3QtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D"
+                    frameBorder="0"
+                    allowFullScreen={true}
+                ></iframe>
+            </Route>
             <Redirect to="/" />
-        </div>;
+        </div >;
     }
 }
 

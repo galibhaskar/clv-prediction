@@ -36,7 +36,7 @@ class Analysis extends React.Component<IAnalysisProps, IAnalysisState> {
                         to make your website building process a breeze and automatize
                          your time-consuming tasks in your development workflow.`}
                     </p>
-                    <Link to="/analysis">
+                    <Link to="/report">
                         <button className={"analysisButton"}>
                             {`View analysis`}
                         </button>

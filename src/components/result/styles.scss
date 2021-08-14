@@ -1,0 +1,24 @@
+.resultContainer {
+  display: flex;
+  flex-direction: column;
+  .clvProgressBarContainer {
+    height: 200px;
+  }
+  .suggestionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    .suggestionItemWrapper {
+      margin: 20px;
+      transition: all 0.2s ease 0s;
+      box-shadow: 0 0 0 1px #ebebeb;
+      border: none;
+      border-top: 4px solid transparent;
+      &:hover {
+        box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
+        transform: translate(0, -5px);
+        border-radius: 1rem !important;
+        border-top: 4px solid #9629e6;
+      }
+    }
+  }
+}

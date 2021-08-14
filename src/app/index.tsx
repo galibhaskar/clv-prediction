@@ -14,10 +14,14 @@ class App extends React.Component<IAppProps, IAppState> {
         this.state = {}
     }
 
+    public componentDidUpdate() {
+        this.render();
+    }
+
     public render() {
         return <>
             <Router>
-                <Header />
+                <Header pathName={window.location.pathname} />
                 <Body />
             </Router>,
         </>;
