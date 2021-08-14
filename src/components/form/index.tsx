@@ -47,9 +47,7 @@ class Form extends React.Component<IFormProps, IFormState> {
             isError: false,
             errorMessage: "",
             isLoading: false,
-            response: {
-                clv: 2000
-            }
+            response: ""
         }
         this._predictionService = new PredictionService();
         window.scrollTo(0, 0);
@@ -67,7 +65,7 @@ class Form extends React.Component<IFormProps, IFormState> {
 
     private isFormValid = () => {
         let _formValues = _.cloneDeep(this.state.formValues);
-        return true;
+        // return true;
         return Object.values(FieldValue).map(_value => {
             if (!_formValues[_value])
                 return false;
@@ -78,7 +76,7 @@ class Form extends React.Component<IFormProps, IFormState> {
     private validateTabDetails = (tabConfig: ITabConfig): boolean => {
         let _fields: IField[] = tabConfig.fields;
         let _formValues = _.cloneDeep(this.state.formValues);
-        return true;
+        // return true;
         return _fields.map(_field => {
             if (!_formValues[_field.key])
                 return false;
