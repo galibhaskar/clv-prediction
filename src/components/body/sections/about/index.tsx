@@ -28,33 +28,31 @@ class About extends React.Component<IAboutProps, IAboutState> {
                         {`Deliver your product using CLV`}
                     </h1>
                     <p className={"description"}>
-                        {`Quick has all the right tools in order 
-                        to make your website building process a breeze and automatize
-                         your time-consuming tasks in your development workflow.`}
+                        {`Our model proactively predicts the interception of the risks and help extend the lifetime of customers by personalizing the content and run targeted campaigns. Thus, improved business.​`}
                     </p>
                     <div className={"appFeatures"}>
                         <div className={"featureItem"}>
                             <Icon iconName="SkypeCircleArrow" />
                             <span className={"itemDescription"}>
-                                {`Tones of SASS variables`}
+                                {`Improve business revenue`}
                             </span>
                         </div>
                         <div className={"featureItem"}>
                             <Icon iconName="SkypeCircleArrow" />
                             <span className={"itemDescription"}>
-                                {`Tones of SASS variables`}
+                                {`Improve upselling and cross selling opportunities`}
                             </span>
                         </div>
                         <div className={"featureItem"}>
                             <Icon iconName="SkypeCircleArrow" />
                             <span className={"itemDescription"}>
-                                {`Tones of SASS variables`}
+                                {`Retain potential valuable customers`}
                             </span>
                         </div>
                         <div className={"featureItem"}>
                             <Icon iconName="SkypeCircleArrow" />
                             <span className={"itemDescription"}>
-                                {`Tones of SASS variables`}
+                                {`Improve customer understanding`}
                             </span>
                         </div>
                     </div>

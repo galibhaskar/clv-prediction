@@ -64,11 +64,10 @@ class LandingPage extends React.Component<ILandingPageProps, ILandingPageState> 
             <section className={"titleSection"}>
                 <div className={"details"}>
                     <h1 className={"title"}>
-                        {`Best way to connect with your customers`}
+                        {`Retention is the new business`}
                     </h1>
                     <p>
-                        {`Conveniently generate multifunctional markets and B2C vortals. 
-                        Uniquely enable inexpensive materials rather than sticky products.`}
+                        {`Conveniently use our platform to predict customer lifetime value and increase your business revenue multifold`}
                     </p>
                     <Link to="/predict">
                         <div className={"titleButton"}>
