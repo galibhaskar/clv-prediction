@@ -12,7 +12,7 @@ export class PredictionService implements IPredicationService {
       crossDomain: true,
       body: JSON.stringify(formData),
     };
-    const url: string = "http://f84b3d6c46b7.ngrok.io/predict";
+    const url: string = "http://428f2d66792a.ngrok.io/predict";
     return new Promise<any>((resolve, reject) => {
       fetch(url, requestOptions)
         .then((res) => res.json())
