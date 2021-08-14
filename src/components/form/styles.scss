@@ -1,65 +1,70 @@
-.tabPivotItem {
-  .tabPanel {
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .leftPanel {
-      max-width: 50%;
-    }
-    .rightPanel {
-      max-width: 20%;
-      // animation: animationFrames 8s ease-in-out infinite;
-      // animation-iteration-count: infinite;
-      // transform-origin: 50% 50%;
-      // -webkit-animation: animationFrames 8s ease-in-out infinite;
-      // -webkit-animation-iteration-count: infinite;
-      // -webkit-transform-origin: 50% 50%;
-      // -moz-animation: animationFrames 8s ease-in-out infinite;
-      // -moz-animation-iteration-count: infinite;
-      // -moz-transform-origin: 50% 50%;
-      // -o-animation: animationFrames 8s ease-in-out infinite;
-      // -o-animation-iteration-count: infinite;
-      // -o-transform-origin: 50% 50%;
-      // -ms-animation: animationFrames 8s ease-in-out infinite;
-      // -ms-animation-iteration-count: infinite;
-      // -ms-transform-origin: 50% 50%;
-    }
-  }
-  .nextButton {
-    transform: rotate(180deg);
-    font-size: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid;
-    margin: auto;
-    display: block;
+.formContainer {
+  position: relative;
+  background-color: #f4f7fa;
+  .tabPivotItem {
     background-color: white;
-    &:enabled:hover {
-      color: white;
-      background: rgb(0, 120, 212);
+    .tabPanel {
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .leftPanel {
+        max-width: 50%;
+      }
+      .rightPanel {
+        max-width: 20%;
+        // animation: animationFrames 8s ease-in-out infinite;
+        // animation-iteration-count: infinite;
+        // transform-origin: 50% 50%;
+        // -webkit-animation: animationFrames 8s ease-in-out infinite;
+        // -webkit-animation-iteration-count: infinite;
+        // -webkit-transform-origin: 50% 50%;
+        // -moz-animation: animationFrames 8s ease-in-out infinite;
+        // -moz-animation-iteration-count: infinite;
+        // -moz-transform-origin: 50% 50%;
+        // -o-animation: animationFrames 8s ease-in-out infinite;
+        // -o-animation-iteration-count: infinite;
+        // -o-transform-origin: 50% 50%;
+        // -ms-animation: animationFrames 8s ease-in-out infinite;
+        // -ms-animation-iteration-count: infinite;
+        // -ms-transform-origin: 50% 50%;
+      }
     }
-  }
-  .messageBarContainer {
-    display: flex;
-    align-items: center;
-    background: rgb(253, 231, 233);
-    i {
-      margin: 5px;
+    .nextButton {
+      transform: rotate(180deg);
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid;
+      margin: auto;
+      display: block;
+      background-color: white;
+      &:enabled:hover {
+        color: white;
+        background: rgb(0, 120, 212);
+      }
     }
-    .errorBadge {
-      font-size: 16px;
-      color: rgb(168, 0, 0);
-    }
-    span {
-      margin-right: 5px;
-      flex-grow: 1;
-      font-size: 12px;
-    }
-    .clearIcon {
-      font-size: 10px;
-      cursor: pointer;
+    .messageBarContainer {
+      display: flex;
+      align-items: center;
+      background: rgb(253, 231, 233);
+      i {
+        margin: 5px;
+      }
+      .errorBadge {
+        font-size: 16px;
+        color: rgb(168, 0, 0);
+      }
+      span {
+        margin-right: 5px;
+        flex-grow: 1;
+        font-size: 12px;
+      }
+      .clearIcon {
+        font-size: 10px;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -70,7 +75,20 @@
   right: 0;
   left: 0;
 }
-
+.resultComponentContainer {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  padding: 100px 0;
+  .formCloseButton {
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 100px;
+    outline: none;
+    font-weight: 600;
+  }
+}
 
 // @keyframes animationFrames {
 //   0% {

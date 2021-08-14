@@ -23,6 +23,7 @@ import './styles.scss';
 import { IPredicationService } from '../../contracts/PredictionService';
 import { PredictionService } from '../../providers/PredictionService';
 import Result from '../result';
+import { Link } from 'react-router-dom';
 initializeIcons();
 
 export interface IFormProps { }
@@ -226,10 +227,13 @@ class Form extends React.Component<IFormProps, IFormState> {
             selectedTabIndex: 0
         });
         this._predictionService.getPredictionResult(_formValues)
-            .then((response) => {
+            .then((_res) => {
                 this.setState({
                     isLoading: false,
-                    response
+                    response: {
+                        clv: _res.result.clv,
+                        offers: _res.result.offers
+                    }
                 })
             })
             .catch(error => {
@@ -252,21 +256,31 @@ class Form extends React.Component<IFormProps, IFormState> {
                 size={SpinnerSize.large}
             />;
 
-        return <Stack
-            style={{
-                padding: 30,
-                paddingTop: 100,
-                display: 'flex',
-                maxWidth: '60%',
-                margin: 'auto'
-                // alignItems: 'center'
-            }}
-        >
-            {
-                response ? <Result
+        else if (response)
+            return <div className={"resultComponentContainer"}>
+                <Result
                     clv={response.clv}
-                    suggestions={[]}
-                /> : <Pivot
+                    suggestions={response.offers}
+                />
+                <Link to="/">
+                    <Icon
+                        iconName={'Cancel'}
+                        className={"formCloseButton"}
+                    />
+                </Link>
+            </div>;
+
+        return <div className={"formContainer"}>
+            <Stack
+                style={{
+                    padding: 30,
+                    paddingTop: 100,
+                    display: 'flex',
+                    maxWidth: '60%',
+                    margin: 'auto'
+                }}
+            >
+                <Pivot
                     defaultSelectedKey={selectedTabIndex.toString()}
                     selectedKey={selectedTabIndex.toString()}
                     onClick={(event: any) => this.handleTabClick(event.target.innerText)}
@@ -352,9 +366,8 @@ class Form extends React.Component<IFormProps, IFormState> {
                         )
                     }
                 </Pivot>
-
-            }
-        </Stack >;
+            </Stack >
+        </div>;
     }
 }
 

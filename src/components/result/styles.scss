@@ -1,23 +1,135 @@
 .resultContainer {
   display: flex;
   flex-direction: column;
-  .clvProgressBarContainer {
-    height: 200px;
+  padding: 50px;
+  background-color: #f4f7fa;
+  max-width: 50%;
+  margin: auto;
+  .clvContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .clvProgressBarContainer {
+      width: 350px;
+    }
+    .clvText {
+      font-size: 60px;
+      font-weight: 700;
+      margin: 20px;
+      max-width: 400px;
+      color: #9629e6;
+    }
   }
   .suggestionsContainer {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
+    padding: 10px 0;
+    justify-content: center;
     .suggestionItemWrapper {
-      margin: 20px;
+      padding: 20px 0;
+      background-color: white;
       transition: all 0.2s ease 0s;
       box-shadow: 0 0 0 1px #ebebeb;
       border: none;
       border-top: 4px solid transparent;
+      position: relative;
+      width: 300px;
+      border-radius: 1rem;
       &:hover {
         box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
         transform: translate(0, -5px);
-        border-radius: 1rem !important;
         border-top: 4px solid #9629e6;
+        border-bottom: 4px solid #9629e6;
+      }
+      .recommendButton {
+        margin: 10px auto;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px solid #6730e3;
+        font-size: 15px;
+        font-weight: 700;
+        width: fit-content;
+        outline: transparent;
+        color: #6730e3;
+        background-color: white;
+        cursor: pointer;
+        &:hover {
+          color: white;
+          background-color: #6730e3;
+        }
+      }
+      .title {
+        padding: 10px 30px;
+        background: #9629e6;
+        max-width: fit-content;
+        color: white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      .loyaltyPointsWrapper {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        .loyaltyPoints {
+          font-size: 20px;
+        }
+      }
+      .planWrapper {
+        text-align: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid gray;
+        margin: 10px 50px;
+        .planImageContainer {
+          width: 100px;
+          height: 100px;
+          margin: auto;
+        }
+        .percentWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .percentContainer {
+            display: flex;
+            flex-direction: column;
+            font-weight: 700;
+            .percent {
+              font-size: 40px;
+              color: #6730e3;
+              margin-right: 10px;
+            }
+            .offText {
+              color: #6730e3;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .pricingWrapper {
+        .amountWrapper {
+          font-size: 18px;
+          color: #707070;
+          text-align: center;
+        }
+        .loyaltyWrapper {
+          width: 130px;
+          padding: 10px;
+          text-align: center;
+          font-weight: 700;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          // border-style: dotted;
+          // border-color: #6730e3;
+          // border-radius: 20px;
+          color: #6730e3;
+          position: absolute;
+          top: 0;
+          right: 0;
+          .loyaltyPoints {
+            font-size: 25px;
+          }
+        }
       }
     }
   }
