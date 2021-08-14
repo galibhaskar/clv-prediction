@@ -5,4 +5,5 @@ export interface ITabConfig {
   key: TabsEnum;
   displayName: string;
   fields: IField[];
+  tabImage: any;
 }

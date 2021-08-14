@@ -22,7 +22,6 @@ import { initializeIcons } from '@fluentui/font-icons-mdl2';
 import './styles.scss';
 import { IPredicationService } from '../../contracts/PredictionService';
 import { PredictionService } from '../../providers/PredictionService';
-import Image1 from '../../assets/Image1.svg';
 initializeIcons();
 
 export interface IFormProps { }
@@ -230,7 +229,7 @@ class Form extends React.Component<IFormProps, IFormState> {
             .catch(error => {
                 this.setState({
                     isError: true,
-                    errorMessage: error,
+                    errorMessage: `Sorry! something went wrong..Please try again`,
                     isLoading: false
                 });
             });
@@ -252,6 +251,8 @@ class Form extends React.Component<IFormProps, IFormState> {
                 padding: 30,
                 paddingTop: 100,
                 display: 'flex',
+                maxWidth: '60%',
+                margin: 'auto'
                 // alignItems: 'center'
             }}
         >
@@ -292,17 +293,27 @@ class Form extends React.Component<IFormProps, IFormState> {
                             }
                             {
                                 <div className={"tabPanel"}>
+                                    {
+                                        index % 2 !== 0 && <img
+                                            src={_tab.tabImage}
+                                            alt={"image1"}
+                                            width={'50%'}
+                                            className={"rightPanel"}
+                                        />
+                                    }
                                     <div className={"leftPanel"}>
                                         {
                                             _tab.fields.map((_field: IField) => this.renderFormField(_field))
                                         }
                                     </div>
-                                    {/* <img
-                                        src={Image1}
-                                        alt={"image"}
-                                        width={'50%'}
-                                        className={"rightPanel"}
-                                    /> */}
+                                    {
+                                        index % 2 === 0 && <img
+                                            src={_tab.tabImage}
+                                            alt={"image2"}
+                                            width={'50%'}
+                                            className={"rightPanel"}
+                                        />
+                                    }
                                 </div>
                             }
                             {
@@ -320,11 +331,12 @@ class Form extends React.Component<IFormProps, IFormState> {
                                     style={{
                                         maxWidth: 200,
                                         margin: 20,
+                                        display: 'block',
                                         marginLeft: 'auto',
                                         marginRight: 'auto'
                                     }}
                                     onClick={this.handleSubmit}
-                                    text={`Post details`}
+                                    text={`Predict CLV`}
                                 />
                             }
                         </PivotItem>

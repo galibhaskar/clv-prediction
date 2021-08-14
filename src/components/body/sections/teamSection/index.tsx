@@ -1,6 +1,5 @@
 import * as React from 'react';
 import TeamConfig from '../../../../configs/TeamConfig';
-import SinghamLogo from '../../../../assets/Divorced.png';
 import './styles.scss';
 
 export interface ITeamSectionProps {

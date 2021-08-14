@@ -9,6 +9,7 @@ export const FormConfig: IFormConfig = {
     {
       key: TabsEnum.Tab1,
       displayName: "Customer Info",
+      tabImage: Assets.Image1,
       fields: [
         {
           key: FieldValue.Gender,
@@ -163,6 +164,7 @@ export const FormConfig: IFormConfig = {
     {
       key: TabsEnum.Tab2,
       displayName: "Customer Pay",
+      tabImage: Assets.Image2,
       fields: [
         {
           key: FieldValue.Income,
@@ -194,6 +196,7 @@ export const FormConfig: IFormConfig = {
     {
       key: TabsEnum.Tab3,
       displayName: "Policies Info",
+      tabImage: Assets.Image3,
       fields: [
         {
           key: FieldValue.Policy,

@@ -19,7 +19,7 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
         return <div className={"footerContainer"} id={this.props.id}>
             <img
                 src={FooterTop}
-                alt={"footer top image"}
+                alt={"footer top"}
                 className={"footerTopImage"}
             />
             <section className={"footerWrapper"}>
