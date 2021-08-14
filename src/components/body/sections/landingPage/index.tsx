@@ -5,7 +5,6 @@ import Image2 from '../../../../assets/Image2.svg';
 import Image3 from '../../../../assets/Image3.svg';
 import Image4 from '../../../../assets/Image4.svg';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
 
 export interface ILandingPageProps {
     id: string;
@@ -49,7 +48,7 @@ class LandingPage extends React.Component<ILandingPageProps, ILandingPageState> 
         return <div className={"statisticsItemWrapper"}>
             <span>
                 {
-                    valueType == ValueType.Percent ?
+                    valueType === ValueType.Percent ?
                         `~ ${this.state.stats[key]}%` : this.state.stats[key]
                 }
             </span>

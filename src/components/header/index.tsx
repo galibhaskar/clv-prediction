@@ -26,7 +26,7 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     }
 
     public render() {
-        return <div className={this.state.isNavBarFixed || window.location.pathname != "/" ? "headerContainerSticky" : "headerContainer"}>
+        return <div className={this.state.isNavBarFixed || window.location.pathname !== "/" ? "headerContainerSticky" : "headerContainer"}>
             <div className={"headerWrapper"}>
                 <div className={"title"}>
                     {`CLV Prediction`}

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import *as  _ from 'lodash';
 import Header from '../components/header';
 import Body from '../components/body';
 import './styles.scss';

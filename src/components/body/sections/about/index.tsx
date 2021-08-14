@@ -57,7 +57,7 @@ class About extends React.Component<IAboutProps, IAboutState> {
                         </div>
                     </div>
                 </div>
-                <img src={Image} alt="image" width={150} />
+                <img src={Image} alt={"about"} width={150} />
             </section>
         </div>;
     }

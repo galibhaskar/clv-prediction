@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import './styles.scss';
-import Image1 from '../../../../assets/Male.png';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import FeaturesConfig from '../../../../configs/FeaturesConfig';
 
@@ -38,6 +37,7 @@ class Features extends React.Component<IFeaturesProps, IFeaturesState> {
                                     src={_feature.image}
                                     width={200}
                                     height={200}
+                                    alt={`feature${_feature.key}`}
                                     className={"imageContainer"}
                                 />
                                 <div className={"detailsWrapper"}>

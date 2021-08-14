@@ -20,7 +20,7 @@ class Analysis extends React.Component<IAnalysisProps, IAnalysisState> {
             <section className={"analysisWrapper"}>
                 <img
                     src={Image}
-                    alt="image"
+                    alt={"analysis"}
                     width={150}
                     className={"imageContainer"}
                 />
