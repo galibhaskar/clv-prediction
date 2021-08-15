@@ -345,7 +345,7 @@ class Result extends React.Component<IResultProps, IResultState> {
                 this.props.userMode === UserMode.Admin && <div className={"clvContainer"}>
                     <CircularProgressbar
                         value={this.state.progressorValue}
-                        text={`${this.props.clv.toFixed(0)}/1000`}
+                        text={`${this.props.clv.toFixed(0)}/100`}
                         circleRatio={0.75}
                         styles={buildStyles({
                             rotation: 1 / 2 + 1 / 8,
@@ -355,7 +355,7 @@ class Result extends React.Component<IResultProps, IResultState> {
                             pathColor: '#6730e3',
                             textColor: '#6730e3',
                         })}
-                        maxValue={1000}
+                        maxValue={100}
                         className={"clvProgressBarContainer"}
                     />
                     <div className={"clvText"}>

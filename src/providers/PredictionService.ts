@@ -3,7 +3,7 @@ import { IPredicationService } from "../contracts/PredictionService";
 export class PredictionService implements IPredicationService {
   private url: string;
 
-  constructor(apiUrl: string = "http://27ed17b5b746.ngrok.io") {
+  constructor(apiUrl: string = "http://90da9df70518.ngrok.io") {
     this.url = apiUrl + "/predict";
   }
 
@@ -19,7 +19,7 @@ export class PredictionService implements IPredicationService {
       body: JSON.stringify(formData),
     };
     return new Promise<any>((resolve, reject) => {
-      fetch(this.url, requestOptions)
+      fetch("http://dev57.pythonanywhere.com/predict", requestOptions)
         .then((res) => res.json())
         .then((response: any) => {
           return resolve(response);
