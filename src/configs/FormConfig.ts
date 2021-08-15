@@ -1,0 +1,267 @@
+import { FieldType } from "../concerns/FieldType";
+import { FieldValue } from "../concerns/FieldValue";
+import { IFormConfig } from "../concerns/FormConfig";
+import { TabsEnum } from "../concerns/Tabs";
+import Assets from "../assets";
+
+export const FormConfig: IFormConfig = {
+  tabs: [
+    {
+      key: TabsEnum.Tab1,
+      displayName: "Customer Info",
+      tabImage: Assets.FormTab1,
+      fields: [
+        {
+          key: FieldValue.Gender,
+          displayName: "Gender",
+          type: FieldType.CustomChoice,
+          options: [
+            {
+              key: "Male",
+              imageSrc: Assets.Male,
+              imageAlt: "Male",
+              selectedImageSrc: Assets.Male,
+              imageSize: { width: 40, height: 40 },
+              text: "Male",
+            },
+            {
+              key: "Female",
+              imageSrc: Assets.Female,
+              imageAlt: "Female",
+              selectedImageSrc: Assets.Female,
+              imageSize: { width: 40, height: 40 },
+              text: "Female",
+            },
+            {
+              key: "Others",
+              imageSrc: Assets.Others,
+              imageAlt: "Others",
+              selectedImageSrc: Assets.Others,
+              imageSize: { width: 40, height: 40 },
+              text: "Others",
+            },
+          ],
+        },
+        {
+          key: FieldValue.Marital_Status,
+          displayName: "Martial Status",
+          type: FieldType.CustomChoice,
+          options: [
+            {
+              key: "Single",
+              imageSrc: Assets.Single,
+              imageAlt: "Single",
+              selectedImageSrc: Assets.Single,
+              imageSize: { width: 40, height: 40 },
+              text: "Single",
+            },
+            {
+              key: "Married",
+              imageSrc: Assets.Married,
+              imageAlt: "Married",
+              selectedImageSrc: Assets.Married,
+              imageSize: { width: 40, height: 40 },
+              text: "Married",
+            },
+            {
+              key: "Divorced",
+              imageSrc: Assets.Divorced,
+              imageAlt: "Divorced",
+              selectedImageSrc: Assets.Divorced,
+              imageSize: { width: 40, height: 40 },
+              text: "Divorced",
+            },
+          ],
+        },
+        {
+          key: FieldValue.Education,
+          displayName: "Education Qualification",
+          type: FieldType.Dropdown,
+          placeholder: "Select educational details",
+          options: [
+            "Bachelor",
+            "College",
+            "Doctor",
+            "High School or Below",
+            "Master",
+          ],
+        },
+        {
+          key: FieldValue.EmploymentStatus,
+          displayName: "Employment Status",
+          type: FieldType.Dropdown,
+          placeholder: `Select employment status`,
+          options: [
+            "Disabled",
+            "Employed",
+            "Medical Leave",
+            "Retired",
+            "Unemployed",
+          ],
+        },
+        {
+          key: FieldValue.State,
+          displayName: "Customer Location",
+          type: FieldType.Dropdown,
+          placeholder: "Select location",
+          options: ["Arizona", "California", "Nevada", "Oregon", "Washington"],
+        },
+        {
+          key: FieldValue.Location_Code,
+          displayName: "Location Code",
+          type: FieldType.CustomChoice,
+          placeholder: "Select location code",
+          options: [
+            {
+              key: "Rural",
+              imageSrc: Assets.Rural,
+              imageAlt: "Rural",
+              selectedImageSrc: Assets.Rural,
+              imageSize: { width: 40, height: 40 },
+              text: "Rural",
+            },
+            {
+              key: "Suburban",
+              imageSrc: Assets.Suburban,
+              imageAlt: "Suburban",
+              selectedImageSrc: Assets.Suburban,
+              imageSize: { width: 40, height: 40 },
+              text: "Suburban",
+            },
+            {
+              key: "Urban",
+              imageSrc: Assets.Urban,
+              imageAlt: "Urban",
+              selectedImageSrc: Assets.Urban,
+              imageSize: { width: 40, height: 40 },
+              text: "Urban",
+            },
+          ],
+        },
+        {
+          key: FieldValue.Vehicle_Size,
+          displayName: "Vehicle Size",
+          type: FieldType.Dropdown,
+          placeholder: "Select vehicle size",
+          options: ["Small", "Medsize", "Large"],
+        },
+        {
+          key: FieldValue.Vehicle_Class,
+          displayName: "Vehicle Class",
+          type: FieldType.Dropdown,
+          placeholder: "Select vehicle class",
+          options: [
+            "Four-Door Car",
+            "Luxury Car",
+            "Luxury SUV",
+            "SUV",
+            "Sports Car",
+            "Two-Door Car",
+          ],
+        },
+      ],
+    },
+    {
+      key: TabsEnum.Tab2,
+      displayName: "Customer Pay",
+      tabImage: Assets.FormTab2,
+      fields: [
+        {
+          key: FieldValue.Income,
+          displayName: "Income",
+          type: FieldType.Integer,
+          placeholder: `Enter the value >5000`,
+        },
+        {
+          key: FieldValue.Monthly_Premium_Auto,
+          displayName: "Monthly Premium Auto",
+          type: FieldType.Integer,
+          placeholder: `Enter the value`,
+        },
+        {
+          key: FieldValue.Months_Since_Last_Claim,
+          displayName: "Monthly Since Last Claim",
+          type: FieldType.Integer,
+          placeholder: `Enter the value`,
+        },
+        {
+          key: FieldValue.Months_Since_Policy_Inception,
+          displayName: "Monthly Since Policy Inception",
+          type: FieldType.Integer,
+          placeholder: `Enter the value`,
+        },
+        {
+          key: FieldValue.Total_Claim_Amount,
+          displayName: "Total Claim Amount",
+          type: FieldType.Float,
+          placeholder: `Enter the value`,
+        },
+      ],
+    },
+    {
+      key: TabsEnum.Tab3,
+      displayName: "Policies Info",
+      tabImage: Assets.FormTab3,
+      fields: [
+        {
+          key: FieldValue.Policy,
+          displayName: "Policy",
+          type: FieldType.Dropdown,
+          options: [
+            "Corporate L1",
+            "Corporate L2",
+            "Corporate L3",
+            "Personal L1",
+            "Personal L2",
+            "Personal L3",
+            "Special L1",
+            "Special L2",
+            "Special L3",
+          ],
+        },
+        {
+          key: FieldValue.Response,
+          displayName: "Sales Channel Response",
+          type: FieldType.CustomChoice,
+          options: [
+            { key: "Yes", text: "Yes", iconProps: { iconName: "CheckMark" } },
+            { key: "No", text: "No", iconProps: { iconName: "Cancel" } },
+          ],
+        },
+        {
+          key: FieldValue.Coverage,
+          displayName: "Coverage",
+          type: FieldType.Dropdown,
+          placeholder: "Select coverage plan",
+          options: ["Basic", "Extended", "Premium"],
+        },
+        {
+          key: FieldValue.Sales_Channel,
+          displayName: "Sales Channel",
+          type: FieldType.Dropdown,
+          placeholder: "Select sales channel",
+          options: ["Agent", "Branch", "Call Center", "Web"],
+        },
+        {
+          key: FieldValue.Renew_Offer_Type,
+          displayName: "Renew Offer Type",
+          type: FieldType.Dropdown,
+          placeholder: "Select offer type",
+          options: ["Offer1", "Offer2", "Offer3", "Offer4"],
+        },
+        {
+          key: FieldValue.Number_of_Policies,
+          displayName: "Policies Count",
+          type: FieldType.Integer,
+          placeholder: `Enter the value`,
+        },
+        {
+          key: FieldValue.Number_of_Open_Compaints,
+          displayName: "Open Complaints Count",
+          type: FieldType.Integer,
+          placeholder: `Enter the value`,
+        },
+      ],
+    },
+  ],
+};

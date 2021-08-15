@@ -1,0 +1,38 @@
+.aboutContainer {
+  background-color: #f4f7fa;
+  padding: 100px 0;
+  .aboutWrapper {
+    max-width: 60%;
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    .detailsWrapper {
+      max-width: 50%;
+      margin-right: 100px;
+      .title {
+        font-weight: 700;
+        color: #9629e6;
+        font-size: 32px;
+      }
+      .description {
+        color: #707070;
+        margin-bottom: 30px;
+      }
+    }
+    .appFeatures {
+      .featureItem {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        i {
+          font-size: 30px;
+          color: #9629e6;
+          transform: rotate(180deg);
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

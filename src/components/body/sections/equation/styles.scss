@@ -1,0 +1,15 @@
+.equationContainer {
+  padding: 100px 0;
+  text-align: center;
+  .equationTitle {
+    font-weight: 700;
+    color: #9629e6;
+    font-size: 32px;
+  }
+  img {
+    max-width: 80%;
+    min-width: 50%;
+    margin: auto;
+    display: block;
+  }
+}

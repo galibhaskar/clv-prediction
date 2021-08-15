@@ -1,0 +1,39 @@
+.headerContainer,
+.headerContainerSticky {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  z-index: 100;
+  // background: transparent;
+  .headerWrapper {
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    max-width: 80%;
+    color: white;
+    align-items: center;
+    .title {
+      font-weight: 900;
+      font-size: 32px;
+      color: white;
+      text-decoration: unset;
+    }
+    .userToggleButton {
+      position: absolute;
+      top: 30px;
+      left: 40px;
+    }
+  }
+}
+
+.headerContainerSticky {
+  background-image: linear-gradient(
+    to right,
+    rgba(32, 40, 119, 1),
+    rgba(55, 46, 149, 1),
+    rgba(83, 49, 177, 1),
+    rgba(114, 48, 205, 1),
+    rgba(150, 41, 230, 1)
+  ) !important;
+}

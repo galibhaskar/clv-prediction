@@ -1,0 +1,60 @@
+.techStackContainer {
+  padding: 100px 0;
+  align-items: center;
+  background-color: #f4f7fa;
+  .techStackWrapper {
+    max-width: 60%;
+    margin: auto;
+    .detailsWrapper {
+      width: 50%;
+      padding: 0 30px;
+      span {
+        font-weight: 900;
+        font-size: 32px;
+        color: #9629e6;
+      }
+    }
+    .itemsContainer {
+      display: flex;
+      justify-content: center;
+      .itemWrapper {
+        width: 200px;
+        margin: 20px;
+        padding: 30px;
+        height: 150px;
+        border: 1px solid #eff2f7;
+        border-radius: 1rem;
+        transition: all 0.2s ease;
+        text-align: center;
+        box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .itemIcon {
+          color: #9629e6;
+          font-size: 32px;
+          line-height: 35px;
+        }
+        .itemDescriptionWrapper {
+          display: flex;
+          flex-direction: column;
+          .itemDescription {
+            margin-top: 0;
+            color: #6c757d;
+          }
+        }
+        &:hover {
+          background-color: #9629e6;
+          color: white !important;
+          transform: translateY(-10px);
+          box-shadow: 0 1rem 3rem rgba(31, 45, 61, 0.125) !important;
+          .itemIcon,
+          .itemDescription {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
